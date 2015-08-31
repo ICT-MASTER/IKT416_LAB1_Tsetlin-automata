@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Testlin.iml" filepath="$PROJECT_DIR$/Testlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tsetlin-automata-java/Tsetlin-automata-java.iml" filepath="$PROJECT_DIR$/Tsetlin-automata-java/Tsetlin-automata-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tsetlin-automata-py/Tsetlin-automata-py.iml" filepath="$PROJECT_DIR$/Tsetlin-automata-py/Tsetlin-automata-py.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/ikt440_teslin.iml" filepath="$PROJECT_DIR$/.idea/ikt440_teslin.iml" />
+>>>>>>> 02763b2f2f53e27659fc362d09869428d31b1b59
     </modules>
   </component>
 </project>
