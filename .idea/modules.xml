@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Testlin.iml" filepath="$PROJECT_DIR$/Testlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tsetlin-automata-java/Tsetlin-automata-java.iml" filepath="$PROJECT_DIR$/Tsetlin-automata-java/Tsetlin-automata-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tsetlin-automata-py/Tsetlin-automata-py.iml" filepath="$PROJECT_DIR$/Tsetlin-automata-py/Tsetlin-automata-py.iml" />
+    </modules>
+  </component>
+</project>
