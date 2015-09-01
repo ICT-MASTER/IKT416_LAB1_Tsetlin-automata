@@ -43,6 +43,9 @@ print("States: {0}\nAutomatas: {1}\nIterations: {2}\nLoops: {3}".format(states, 
 print("-------")
 print("Progress: ")
 
+
+startTime = time.time()
+
 # Create automatas
 automata_list = [Automata(states) for x in range(num_automata)]
 result = {}
@@ -81,3 +84,8 @@ for x in range(times):
     #print("{0}: {1}").format(key, value)
     #    with open ('data.dat', 'a') as f: f.write (key+ "   " + str(value) + '\n')
         #os.system("python termgraph.py data.dat")
+
+endTime = time.time()
+
+
+print("\nExecuted in {0} seconds.".format(endTime - startTime))
