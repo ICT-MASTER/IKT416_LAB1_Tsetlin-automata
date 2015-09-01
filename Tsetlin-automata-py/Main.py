@@ -1,13 +1,8 @@
 import random
 import uuid
+import sys
 import operator
-
-
-
-
-
-
-
+import os
 
 class Automata(object):
 
@@ -21,7 +16,7 @@ class Automata(object):
         self.states = states
         self.state = random.randint(self.states, (self.states) + 1)
         self.id = uuid.uuid1()
-        print("Automata: {0} - Init state: {1}").format(self.id, self.state)
+        # print("Automata: {0} - Init state: {1}").format(self.id, self.state)
 
 
         self.tmpyes = 0
@@ -93,25 +88,27 @@ class Environment(object):
 
 
 # Logic ----------------
-states = 500
+states = int(sys.argv[1])
 num_automata = 5
-iterations = 100000
+iterations = int(sys.argv[3])
+times =  int(sys.argv[2])
 
 # Create automatas
 automata_list = [Automata(states) for x in range(num_automata)]
-
 result = {}
 
-for x in range(iterations):
+
+for x in range(times):
+    for x in range(iterations):
 
     # Count YES
-    yes = 0
-    for automata in automata_list:
-        if automata.isYes():
-            automata.tmpyes = automata.tmpyes + 1 # TODO
-            yes = yes + 1
-        else:
-            automata.tmpno = automata.tmpno + 1 # TODO
+        yes = 0
+        for automata in automata_list:
+            if automata.isYes():
+                automata.tmpyes = automata.tmpyes + 1 # TODO
+                yes = yes + 1
+            else:
+                automata.tmpno = automata.tmpno + 1 # TODO
 
 
     # Create environment and calculate probability
@@ -127,7 +124,6 @@ for x in range(iterations):
             automata.punish()
 
 
-
     # Generate result for iteration
     result_key = "{0}/{1}".format(yes, len(automata_list) - yes)
     if result_key not in result:
@@ -135,21 +131,8 @@ for x in range(iterations):
     else:
         result[result_key] = result[result_key] + 1
 
-
-for key, value in sorted(result.items(), key=operator.itemgetter(1), reverse=True):
-    print("{0}: {1}").format(key, value)
-
-print("----------")
-
-for automat in automata_list:
-    print str(automat.tmpyes) + " - " + str(automat.tmpno)
-
-print("----------")
-
-
-
-
-
-
-
-
+    open('data.dat', 'w').close()
+    for key, value in sorted(result.items(), key=operator.itemgetter(1), reverse=True):
+    #print("{0}: {1}").format(key, value)
+        with open ('data.dat', 'a') as f: f.write (key+ "   " + str(value) + '\n')
+        #os.system("python termgraph.py data.dat")
