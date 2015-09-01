@@ -20,9 +20,6 @@ num_automata = 5
 iterations = 1000
 times = 1000
 
-refresh_rate = 1000 # 1 second
-isDone = False # If calculation is done
-
 
 arguments = sys.argv[1:]
 
