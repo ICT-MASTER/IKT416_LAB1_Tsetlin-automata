@@ -11,10 +11,10 @@ class Environment(object):
 
     def probability(self):
 
-        #percent_yes = (self.yes / self.num_automatas) * 100.0
+        percent_yes = (self.yes / self.num_automatas) * 100.0
 
         # Above 60% YES
-        if self.yes <= 3:
+        if percent_yes <= 60:
             self.prob = self.yes * 0.2  # yes=5, probl =1 ... yes=0, prob = 0,
         else:
             self.prob = 0.6 - (self.yes - 3) * 0.2  # yes=5, 0.6-2*0.2 = 0.5
